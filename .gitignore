@@ -1,0 +1,22 @@
+Library/
+Logs/
+Packages/
+ProjectSettings/
+Temp/
+UserSettings/
+*.asset
+*.meta
+Assets/Materials/
+Assets/Resources/
+Assets/Samples/
+Assets/Scenes/
+Assets/Settings/
+Assets/VRTemplateAssets/
+Assets/XR/
+Assets/XRI/
+Assets/TextMesh\ Pro/
+Assembly-CSharp.csproj
+Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj
+Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj
+.vscode/extensions.json
+Assets/VideoRenderTexture.renderTexture
