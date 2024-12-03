@@ -9,7 +9,7 @@ using System.Linq;
 
 public class VideoReceiver : MonoBehaviour
 {
-    public RenderTexture renderTexture; // Assign this in the inspector
+    public RenderTexture renderTexture;
     private RTCPeerConnection pc;
     private MediaStream videoStream;
 
@@ -47,12 +47,12 @@ public class VideoReceiver : MonoBehaviour
     {
         // Create offer
         var offerOp = pc.CreateOffer();
-        yield return offerOp; // Wait until the operation is complete
-        RTCSessionDescription offer = offerOp.Desc; // Get the resulting offer
+        yield return offerOp;
+        RTCSessionDescription offer = offerOp.Desc;
 
         // Set local description
         var localDescOp = pc.SetLocalDescription(ref offer);
-        yield return localDescOp; // Wait until the operation is complete
+        yield return localDescOp;
 
         // Send offer to the signaling server
         yield return StartCoroutine(SendOfferToSignalingServerCoroutine(offer, pc));
@@ -72,7 +72,7 @@ public class VideoReceiver : MonoBehaviour
                 var answer = JsonUtility.FromJson<RTCSessionDescription>(responseJson);
 
                 var remoteDescOp = pc.SetRemoteDescription(ref answer);
-                yield return remoteDescOp; // Wait for remote description to be set
+                yield return remoteDescOp;
             }
             else
             {
